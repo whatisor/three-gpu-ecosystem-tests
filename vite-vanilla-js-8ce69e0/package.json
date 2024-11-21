@@ -7,7 +7,10 @@
     "dev": "vite",
     "start": "vite build && vite preview"
   },
+  "dependencies": {
+    "three": "file:../three-8ce69e0.tgz"
+  },
   "devDependencies": {
-    "vite": "^5.4.10"
+    "vite": "5.4.10"
   }
 }
