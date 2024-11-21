@@ -2,11 +2,11 @@
 
 This is a collection of tests that incrementally add complexity to the setup. Testing is done with Three.js development versions that are between r170 and r171. All tests use WebGPURenderer.
 
-Testing goes from Vite vanilla JS all the way to TS + React + Next.js + React Three Fiber + Drei.
+Testing goes from Vite vanilla JS all the way to TS + React + React Three Fiber + Drei +Next.js + RSC.
 
-## 8ce69e0
+## 8ce69e0 (2024-11-21)
 
-**8ce69e0** is Three.js at this commit: https://github.com/mrdoob/three.js/tree/8ce69e0fbf100cd8ab1b72902ca6a180d3d6abf0
+**8ce69e0** is [this commit](https://github.com/mrdoob/three.js/tree/8ce69e0fbf100cd8ab1b72902ca6a180d3d6abf0).
 
 It is the current `dev` branch as of 2024-11-21, before the release of Three.js r171.
 
@@ -38,6 +38,23 @@ Dev: ✅ OK | Prod: ✅ OK
 
 Vite, React, JS, SWC, React Three Fiber, Drei Orbit Controls
 
-Dev: ✅ OK | Prod: ✅ OK
+Dev: ⚠️ OK with warning | Prod: ⚠️ OK with warning
 
 > ⚠️ THREE.Renderer: .render() called before the backend is initialized. Try using .renderAsync() instead.
+
+### next-pages-vanilla-8ce69e0
+
+Next.js, Pages Router, vanilla Three.js
+
+❌ Error: `ReferenceError: self is not defined`
+
+```
+// GPUShaderStage is not defined in browsers not supporting WebGPU
+const GPUShaderStage = self.GPUShaderStage;
+```
+
+### next-pages-vanilla-dynamic-8ce69e0
+
+Next.js, Pages Router, vanilla Three.js – Workaround with a dynamic import
+
+Dev: ✅ OK | Prod: ✅ OK
