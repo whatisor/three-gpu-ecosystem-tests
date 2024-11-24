@@ -74,3 +74,11 @@ Next.js, Pages Router, vanilla Three.js
 Dev: ⚠️ OK with warning | Prod: ⚠️ OK with warning
 
 > WARNING: Multiple instances of Three.js being imported.
+
+### next-pages-vanilla-pr-29919-revert-webgpuutils
+
+Next.js, Pages Router, vanilla Three.js – Revert WebGPUUtils change in the PR
+
+Dev: ⚠️ OK with warning | Prod: ⚠️ OK with warning
+
+> WARNING: Multiple instances of Three.js being imported.
