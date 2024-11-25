@@ -112,6 +112,30 @@ Dev: ✅ ⚠️ | Prod: ✅ ⚠️
 
 > ⚠️ .render() called before the backend is initialized. Try using .renderAsync() instead.
 
+### Next.js 15, App Router, R3F v9, React 19 RC, RSC
+
+Dev: ✅ ⚠️ | Prod: ✅ ⚠️
+
+> ⚠️ .render() called before the backend is initialized. Try using .renderAsync() instead.
+
+You can use React Server Components with R3F. This actually works without `use client`:
+
+```js
+<ClientCanvas>
+  <ambientLight intensity={Math.PI / 2} />
+  <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} decay={0} intensity={Math.PI} />
+  <pointLight position={[-10, -10, -10]} decay={0} intensity={Math.PI} />
+  <mesh>
+    <boxGeometry />
+    <meshStandardMaterial color="red" />
+  </mesh>
+  <Box position={[-1.2, 0, 0]} />
+  <Box position={[1.2, 0, 0]} />
+</ClientCanvas>
+```
+
+`ClientCanvas` and `Box` are marked with `'use client'`, but objects that do not use hooks (like `mesh`) work in server files, which is pretty mind-blowing. Expect this approach to be extremely painful, and a lot of ecosystem libraries not to work.
+
 ## Drei Compatibility
 
 The following Drei components have been tested with R3F + WebGPU:
