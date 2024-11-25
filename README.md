@@ -10,6 +10,7 @@ This is the behavior expected for the upcoming Three.js r171 release.
 
 - ✅ **Vite + vanilla Three.js**: Works in all cases.
 - ✅ **Next.js + vanilla Three.js**: Works in all cases.
+- ✅ **Vite + R3F**: Works.
 - ✅ **Next.js 14 + R3F**: Works in both Pages and App routers.
 - ❌ **Next.js 15 + R3F**: Does not work, except with Pages Router + React 18.
 
