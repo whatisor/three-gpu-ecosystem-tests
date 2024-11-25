@@ -88,4 +88,4 @@ The following Drei components have been tested with R3F + WebGPU:
 - ✅ FlyControls
 - ✅ MapControls
 
-  You can run one of the R3F test cases of this repo and help complete the list. Don't commit code, just edit this README with the results of your tests.
+You can run one of the R3F test cases of this repo and help complete the list. Don't commit code, just edit this README with the results of your tests.
