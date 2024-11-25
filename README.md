@@ -16,7 +16,7 @@ This is the behavior expected for the upcoming Three.js r171 release.
 
 ✅ ⚠️ All **R3F** cases work but cause the warning ⚠️ `THREE.Renderer: .render() called before the backend is initialized. Try using .renderAsync() instead.`.
 
-You should also expect to only be able to use a subset of [Drei](https://github.com/pmndrs/drei) and the Three.js ecosystem with WebGPU, since some libraries and composants are written in GLSL.
+You should also expect to only be able to use a subset of [Drei](https://github.com/pmndrs/drei) and the Three.js ecosystem with WebGPU, since some libraries and composants are written in GLSL. See the [Drei Compatibility](#drei-compatibility) section for the list of compatible components.
 
 ## 4cc2eb5 (2024-11-25)
 
@@ -79,3 +79,13 @@ Next.js 15 should be used with React 19 RC, but there are incompatible dependenc
 With `npm i --legacy-peer-deps`:
 
 ❌ `TypeError: Cannot read properties of undefined (reading 'ReactCurrentOwner')`
+
+## Drei Compatibility
+
+The following Drei components have been tested with R3F + WebGPU:
+
+- ✅ OrbitControls
+- ✅ FlyControls
+- ✅ MapControls
+
+  You can run one of the R3F test cases of this repo and help complete the list. Don't commit code, just edit this README with the results of your tests.
