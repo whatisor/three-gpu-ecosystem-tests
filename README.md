@@ -2,7 +2,7 @@
 
 This is a collection of tests that incrementally add complexity to the setup. Testing is done with Three.js development versions that are between r170 and r171. All tests use **WebGPURenderer** and **TSL**.
 
-Testing goes from Vite vanilla JS all the way to TS + React + React Three Fiber + Drei + Next.js (Pages Router for now, no RSCs).
+Testing goes from Vite vanilla JS all the way to TS + React + React Three Fiber + Drei + Next.js (Pages and App routers).
 
 ## 4cc2eb5 (2024-11-25)
 
@@ -27,5 +27,9 @@ Dev: ⚠️ | Prod: ⚠️
 Seems like this issue is on R3F?
 
 ### Next.js, Pages Router, vanilla Three.js
+
+Dev: ✅ | Prod: ✅
+
+### Next.js, App Router (use client), vanilla Three.js
 
 Dev: ✅ | Prod: ✅
