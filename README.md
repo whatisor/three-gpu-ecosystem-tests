@@ -18,18 +18,40 @@ Dev: ✅ | Prod: ✅
 
 Dev: ✅ | Prod: ✅
 
-### Vite, React, JS, SWC, R3F, Drei
+### Vite, React, JS, SWC, R3F
 
 Dev: ⚠️ | Prod: ⚠️
 
-> ⚠️ THREE.Renderer: .render() called before the backend is initialized. Try using .renderAsync() instead.
+> THREE.Renderer: .render() called before the backend is initialized. Try using .renderAsync() instead.
 
 Seems like this issue is on R3F?
 
-### Next.js, Pages Router, vanilla Three.js
+### Next.js 15, Pages Router, vanilla Three.js
 
 Dev: ✅ | Prod: ✅
 
-### Next.js, App Router (use client), vanilla Three.js
+### Next.js 15, App Router (use client), vanilla Three.js
 
 Dev: ✅ | Prod: ✅
+
+### Next.js 15, Pages Router, R3F, React 18
+
+Next.js 15 should be used with React 19 RC, but there are incompatible dependencies with R3F. Forcing react@18.3.1 in this case. Next.js issues are expected.
+
+Dev: ⚠️ | Prod: ⚠️
+
+> [HMR] Invalid message: {"action":"appIsrManifest","data":{}} - TypeError: Cannot read properties of undefined (reading 'pathname')
+
+> THREE.Renderer: .render() called before the backend is initialized. Try using .renderAsync() instead.
+
+### Next.js 15, App Router, R3F, React 18
+
+Next.js 15 should be used with React 19 RC, but there are incompatible dependencies with R3F. Forcing react@18.3.1 in this case. Next.js issues are expected.
+
+❌ `TypeError: Cannot read properties of undefined (reading 'ReactCurrentOwner')`
+
+### Next.js 15, Pages Router, R3F, React 19
+
+With `npm i --legacy-peer-deps`:
+
+❌ `TypeError: Cannot read properties of undefined (reading 'ReactCurrentOwner')`
