@@ -4,7 +4,7 @@ import { useRef, useState } from 'react'
 import { useFrame, useThree } from '@react-three/fiber'
 import * as TSL from 'three/tsl'
 
-function Box(props) {
+export function ClientBox(props) {
   const meshRef = useRef()
   const [hovered, setHover] = useState(false)
   const [active, setActive] = useState(false)
@@ -29,5 +29,3 @@ function Box(props) {
     </mesh>
   )
 }
-
-export default Box

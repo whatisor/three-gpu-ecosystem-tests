@@ -14,6 +14,7 @@ This is the behavior expected for the upcoming Three.js r171 release.
 - ✅ **Next.js 14 + R3F**: Works in both Pages and App routers.
 - ❌ **Next.js 15 + R3F**: Does not work, except with Pages Router + React 18.
 - ✅ **Next.js 15 + R3F v9**: Works with a minor workaround, in both Pages and App routers.
+- ✅ **Next.js 15 + R3F v9 + RSC**: Works, but good luck with that.
 
 ✅ ⚠️ All **R3F** cases work but cause the warning ⚠️ `THREE.Renderer: .render() called before the backend is initialized. Try using .renderAsync() instead.`.
 
@@ -118,10 +119,14 @@ Dev: ✅ ⚠️ | Prod: ✅ ⚠️
 
 > ⚠️ .render() called before the backend is initialized. Try using .renderAsync() instead.
 
-You can use React Server Components with R3F. This actually works without `use client`:
+You can use React Server Components with R3F. This actually works without `'use client'`:
 
 ```js
 <ClientCanvas>
+  <ClientOrbitControls />
+  <ClientBox position={[-1.2, 0, 0]} />
+  <ClientBox position={[1.2, 0, 0]} />
+
   <ambientLight intensity={Math.PI / 2} />
   <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} decay={0} intensity={Math.PI} />
   <pointLight position={[-10, -10, -10]} decay={0} intensity={Math.PI} />
@@ -129,12 +134,10 @@ You can use React Server Components with R3F. This actually works without `use c
     <boxGeometry />
     <meshStandardMaterial color="red" />
   </mesh>
-  <Box position={[-1.2, 0, 0]} />
-  <Box position={[1.2, 0, 0]} />
 </ClientCanvas>
 ```
 
-`ClientCanvas` and `Box` are marked with `'use client'`, but objects that do not use hooks (like `mesh`) work in server files, which is pretty mind-blowing. Expect this approach to be extremely painful, and a lot of ecosystem libraries not to work.
+`ClientCanvas`, `ClientBox`, and `ClientOrbitControls` are marked with `'use client'`. You can interweave server and client components this way, but expect this approach to be pretty painful.
 
 ## Drei Compatibility
 
