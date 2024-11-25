@@ -143,12 +143,16 @@ You can use React Server Components with R3F. This actually works without `'use 
 
 The following Drei components have been tested with R3F + WebGPU:
 
+- ✅ BakeShadows
 - ✅ Billboard
 - ✅ FlyControls
 - ✅ GradientTexture
 - ✅ Html
+- ✅ Instances
+- ✅ KeyboardControls
 - ✅ MapControls
 - ✅ OrbitControls
+- ✅ OrthographicCamera
 - ✅ Stats
 - ✅ StatsGl
 
