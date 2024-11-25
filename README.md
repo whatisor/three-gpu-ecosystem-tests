@@ -13,6 +13,7 @@ This is the behavior expected for the upcoming Three.js r171 release.
 - ✅ **Vite + R3F**: Works.
 - ✅ **Next.js 14 + R3F**: Works in both Pages and App routers.
 - ❌ **Next.js 15 + R3F**: Does not work, except with Pages Router + React 18.
+- ✅ **Next.js 15 + R3F v9**: Works with a minor workaround, in both Pages and App routers.
 
 ✅ ⚠️ All **R3F** cases work but cause the warning ⚠️ `THREE.Renderer: .render() called before the backend is initialized. Try using .renderAsync() instead.`.
 
@@ -79,6 +80,29 @@ Next.js 15 should be used with React 19 RC, but there are incompatible dependenc
 With `npm i --legacy-peer-deps`:
 
 ❌ `TypeError: Cannot read properties of undefined (reading 'ReactCurrentOwner')`
+
+### Next.js 15, Pages Router, R3F v9, React 19 RC
+
+With `npm i --legacy-peer-deps`:
+
+`TypeError: gl.xr.addEventListener is not a function`
+
+Can be fixed with:
+
+```jsx
+<Canvas
+  gl={canvas => {
+    const renderer = new WebGPURenderer({ canvas })
+    renderer.xr = { addEventListener: () => {} }
+    return renderer
+  }}
+>
+```
+
+Dev: ✅ ⚠️ | Prod: ✅ ⚠️
+
+> ⚠️ [HMR] Invalid message: {"action":"appIsrManifest","data":{}}
+> ⚠️ .render() called before the backend is initialized. Try using .renderAsync() instead.
 
 ## Drei Compatibility
 

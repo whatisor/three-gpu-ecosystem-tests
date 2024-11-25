@@ -1,6 +1,8 @@
+'use client'
+
 import React, { useRef, useState } from 'react'
 import { Canvas, useFrame, useThree } from '@react-three/fiber'
-import { Billboard, OrbitControls, Text } from '@react-three/drei'
+import { OrbitControls } from '@react-three/drei'
 import { WebGPURenderer } from 'three/webgpu'
 import * as TSL from 'three/tsl'
 
@@ -30,27 +32,22 @@ function Box(props) {
   )
 }
 
-export default function App() {
+export default function IndexPage() {
   return (
-    <Canvas style={{ height: '100vh' }} gl={canvas => new WebGPURenderer({ canvas })}>
+    <Canvas
+      style={{ height: '100vh' }}
+      gl={canvas => {
+        const renderer = new WebGPURenderer({ canvas })
+        renderer.xr = { addEventListener: () => {} }
+        return renderer
+      }}
+    >
       <OrbitControls />
       <ambientLight intensity={Math.PI / 2} />
       <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} decay={0} intensity={Math.PI} />
       <pointLight position={[-10, -10, -10]} decay={0} intensity={Math.PI} />
       <Box position={[-1.2, 0, 0]} />
       <Box position={[1.2, 0, 0]} />
-      <Billboard
-        follow={true}
-        lockX={false}
-        lockY={false}
-        lockZ={false} // Lock the rotation on the z axis (default=false)
-      >
-        <mesh>
-          <boxGeometry args={[1, 1, 1]} />
-          <meshStandardMaterial color="hotpink" />
-        </mesh>
-        <Text fontSize={1}>I'm a billboard</Text>
-      </Billboard>
     </Canvas>
   )
 }
