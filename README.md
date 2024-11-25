@@ -143,14 +143,18 @@ You can use React Server Components with R3F. This actually works without `'use 
 
 The following Drei components have been tested with R3F + WebGPU:
 
-- ✅ OrbitControls
-- ✅ FlyControls
-- ✅ MapControls
-- ✅ GradientTexture
 - ✅ Billboard
+- ✅ FlyControls
+- ✅ GradientTexture
+- ✅ Html
+- ✅ MapControls
+- ✅ OrbitControls
+- ✅ Stats
+- ✅ StatsGl
 
-- ❌ Outlines: `NodeMaterial: Material "ShaderMaterial" is not compatible.`
 - ❌ Edges: `TypeError: Failed to execute 'drawIndexed' on 'GPURenderPassEncoder': Value is infinite and not of type 'unsigned long'.`
+- ❌ Outlines: `NodeMaterial: Material "ShaderMaterial" is not compatible.`
 - ❌ Text: `TypeError: Failed to execute 'drawIndexed' on 'GPURenderPassEncoder': Value is infinite and not of type 'unsigned long'.`
+- ❌ Wireframe: Nothing shows up + `Requires non-indexed geometry, converting to non-indexed geometry.`
 
 You can run one of the R3F test cases of this repo and help complete the list. Don't commit code, just edit this README with the results of your tests.
