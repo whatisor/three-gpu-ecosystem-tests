@@ -34,6 +34,12 @@ Dev: ✅ | Prod: ✅
 
 Dev: ✅ | Prod: ✅
 
+### Next.js 14, Pages Router, R3F, React 18
+
+Dev: ⚠️ | Prod: ⚠️
+
+> THREE.Renderer: .render() called before the backend is initialized. Try using .renderAsync() instead.
+
 ### Next.js 15, Pages Router, R3F, React 18
 
 Next.js 15 should be used with React 19 RC, but there are incompatible dependencies with R3F. Forcing react@18.3.1 in this case. Next.js issues are expected.
