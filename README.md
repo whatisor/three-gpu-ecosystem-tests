@@ -104,6 +104,14 @@ Dev: ✅ ⚠️ | Prod: ✅ ⚠️
 > ⚠️ [HMR] Invalid message: {"action":"appIsrManifest","data":{}}
 > ⚠️ .render() called before the backend is initialized. Try using .renderAsync() instead.
 
+### Next.js 15, App Router, R3F v9, React 19 RC
+
+Use the same `xr` fix as above.
+
+Dev: ✅ ⚠️ | Prod: ✅ ⚠️
+
+> ⚠️ .render() called before the backend is initialized. Try using .renderAsync() instead.
+
 ## Drei Compatibility
 
 The following Drei components have been tested with R3F + WebGPU:
