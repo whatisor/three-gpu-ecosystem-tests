@@ -14,10 +14,6 @@ It is the current `dev` branch as of 2024-11-25, before the release of Three.js 
 
 Dev: ✅ | Prod: ✅
 
-### Vite, React, JS
-
-Dev: ✅ | Prod: ✅
-
 ### Vite, React, TS, SWC
 
 Dev: ✅ | Prod: ✅
